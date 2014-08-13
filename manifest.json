@@ -1,0 +1,18 @@
+{
+"manifest_version":2,
+"name": "screenreader standalone",
+  "version": "0.1",
+  "description" : "read web pages aloud easily",
+   "content_scripts": [
+    {
+      "matches": ["https://*/*","http://*/*","file://*/*"],
+      "css": ["sc.css"],
+      "js": ["browserspeak.js","screenreader.js"]
+    }
+  ],
+  
+  "background": {
+    "page": "background.js",
+    "persistent": false
+ }
+}
