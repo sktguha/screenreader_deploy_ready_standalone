@@ -249,6 +249,10 @@ function subs(inp)
 // main function for keypress handler
 function handler(event)
 {
+	if(event.target==null || event.target==document.body)
+	;
+	else
+	return;
     var ns=47,ps=46,np=39,pp=59,rep=32,cef=78; //cef content editabillity flag
     var pss=109,nss=44,ss=13; //next system sentence and previous system sentence   
     var blist=108,invertcol=105; //invert colors
