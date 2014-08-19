@@ -1,4 +1,4 @@
-hello sir please see the code for screenreader extension. the main file is "screenreader.js".
+hello please see the code for screenreader extension. the main file is "screenreader.js".
 some functions may be uncommented
 or not described well. i am sorry for that. actually i made this for myself to avoid eyestrain
 while reading webpages .
