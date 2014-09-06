@@ -1,7 +1,3 @@
-hello please see the code for screenreader extension. the main file is "screenreader.js".
-some functions may be uncommented
-or not described well. i am sorry for that. actually i made this for myself to avoid eyestrain
-while reading webpages .
 so see the video tutorial(http://youtu.be/gmfv3QHrwfM) or a simple description below
 ----------KEYMAP-----------
 (video tutorial http://youtu.be/Qfz-UAqSjRc , this video is actually for the windows one but the keymap is similiar for this)
