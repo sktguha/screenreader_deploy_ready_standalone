@@ -12,3 +12,5 @@ similiarly 'm' key goes to previous line and reads it.(i.e upto previous full st
  ----------HOW IT WORKS------
  the extension works using the chrome tts api. so it is fully independent of platform.
  
+windows specific version, (u can use additional 32 bit voices also, requires an exe to be running) 
+https://github.com/sktguha/screenreader-dependant
