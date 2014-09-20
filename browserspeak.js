@@ -41,9 +41,9 @@ var voices = window.speechSynthesis.getVoices();
 
 if( !window.navigator.onLine) //offline implementation is buggy :(
 {
-	utterance.voice=voices.filter(function(v){return v.localService==true})[0]};
-}
+	utterance.voice=voices.filter(function(v){return v.localService==true})[0]
 
+};
 window.speechSynthesis.speak(utterance);
 
 //cvox.Api.speak("hello spoken using chromevox", 0, null);
