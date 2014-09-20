@@ -1,6 +1,6 @@
 so see the video tutorial(http://youtu.be/gmfv3QHrwfM) or a simple description below
 ----------KEYMAP-----------
-(video tutorial http://youtu.be/Qfz-UAqSjRc , this video is actually for the windows one but the keymap is similiar for this)
+(video tutorial http://youtu.be/l1K5HjX7m9k , this video is actually for the windows one but the keymap is similiar for this)
 usage is very simple. select any text and press 
 , key .The text selection moves to next line and 'reads it'(i.e upto next full stop)
 aloud i.e u will hear the sound from the speakers
