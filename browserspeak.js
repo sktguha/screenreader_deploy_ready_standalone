@@ -14,16 +14,38 @@ var maxreqlength = 1500;
 // This is a conservative limit that should work with all browsers.
 var selectedText="";
 var debug=1;
+function stopspeaking()
+{
+//if(window.speechSynthesis.speaking)
+window.speechSynthesis.cancel();
+}
+
 function speaktext(text)
 {
 //window.speechSynthesis.stop();
-window.speechSynthesis.cancel();
-console.error("got"+text);
+stopspeaking();
+console.debug("got"+text);
 if(text.trim().length<=0)
-window.speechSynthesis.stop();
-if(text.split("<speedofvoice1389867680568>").length<=0)
+{
+stopspeaking();
 return;
-window.speechSynthesis.speak(new SpeechSynthesisUtterance(text.split("<speedofvoice1389867680568>")[0]));
+}
+
+if(text.split("<speedofvoice1389867680568>").length<=0)
+{
+stopspeaking();
+return;
+}
+var utterance = new SpeechSynthesisUtterance(text.split("<speedofvoice1389867680568>")[0]);
+var voices = window.speechSynthesis.getVoices();
+
+if( !window.navigator.onLine) //offline implementation is buggy :(
+{
+	utterance.voice=voices.filter(function(v){return v.localService==true})[0]};
+}
+
+window.speechSynthesis.speak(utterance);
+
 //cvox.Api.speak("hello spoken using chromevox", 0, null);
 //cvox.Api.playEarcon(earcon);
 return;

@@ -273,7 +273,7 @@ function handler(event)
     //return false;
     }
 
-    if((kc==cef+32 || kc==cef) &&event.shiftKey==true)
+    if(false && (kc==cef+32 || kc==cef) &&event.shiftKey==true)
     {
         //alert("called"); 
         //console.debug("got before invertcolor");
@@ -282,7 +282,7 @@ function handler(event)
     //return false;
     }
     
-    if((kc==sav || kc==sav+32) && event.shiftKey) //ctrl + s statement.sends keypresses to chrome to save the 
+    if(false && (kc==sav || kc==sav+32) && event.shiftKey) //ctrl + s statement.sends keypresses to chrome to save the 
     //page
         {
             //alert("got ctrl + s");
@@ -319,51 +319,19 @@ function handler(event)
         }
     }
 
-    if(kc==su)
+    if(false && kc==su)
     {
         sr= sr<10?sr+1:10;
         console.debug("speech rate is "+sr);
     //return;
     }
-    if(kc==sd)
+    if(false && kc==sd)
     {
         sr= sr>-10?sr-1:-10;
         console.debug("speech rate is "+sr);
     //return;
     }
 
-    var url=document.URL.toString();
-
-    if(kc==prevlink)
-    {
-        if(url.indexOf("LiB")!=-1)
-        {
-            var adr=document.getElementsByTagName("a")[1].href;
-            window.location.href=adr;
-        }
-    //return false;
-    }
-    if(kc==nextlink)
-    {
-        if(url.indexOf("LiB")!=-1)
-        {
-            adr=document.getElementsByTagName("a")[2].href;
-            window.location.href=adr;
-        }
-    //return false;
-    }
-    
-    if(kc==blist)
-    {
-        if(blindex==0){
-            blindex=1; /*alert("on");*/
-        }
-        else                     {
-            blindex=0; /*alert("off");*/
-        }
-    //return false;    
-    }
-    
     else if(ks=="m")    // . for prev sentence
     { 
         //alert("called p");
@@ -980,8 +948,8 @@ function mvis()
         amt=dh*scf; //341;    
     }
     window.scrollBy(0, amt);
-     console.log(sel.top+" " +sel.right+" "+sel.bottom+" "+ sel.left+"\n"+dw+" "+dh+" amt= "+amt);        
-	 console.error("scroll value "+amt);	 
+     //console.log(sel.top+" " +sel.right+" "+sel.bottom+" "+ sel.left+"\n"+dw+" "+dh+" amt= "+amt);        
+	 //console.error("scroll value "+amt);	 
 	if(amt>500) 
         console.debug("scroll value too much "+amt);
 

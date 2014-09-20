@@ -2,17 +2,31 @@
 "manifest_version":2,
 "name": "screenreader standalone",
   "version": "0.1",
-  "description" : "read web pages aloud easily",
-   "content_scripts": [
+  "description" : "Reads out aloud web pages easily and gives your eyes a much needed break!",
+  "content_scripts": [
     {
-      "matches": ["https://*/*","http://*/*","file://*/*"],
-      "css": ["sc.css"],
-      "js": ["browserspeak.js","screenreader.js"]
+      "matches": [
+        "https://*/*",
+        "http://*/*",
+		"file:///*/*"
+      ],
+	  "css": ["sc.css"],
+      "run_at": "document_start",
+      "all_frames": true
     }
-  ],
-  
+  ], 
+  "options_page": "options.html#keymap",
+  "browser_action": {
+          "default_icon": "icon.png"
+   },
   "background": {
-    "page": "background.js",
-    "persistent": false
- }
+    "persistent": false,
+	 "scripts": ["background.js"]
+  },
+  "permissions": [
+  "tabs",
+  "https://*/*",
+  "http://*/*",
+  "file:///*/*"
+]
 }
