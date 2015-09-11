@@ -327,7 +327,7 @@ function handler(event)
     }
     if(false && kc==sd)
     {
-        sr= sr>-10?sr-1:-10;
+        sr= sr>0?sr-1:0;
         console.debug("speech rate is "+sr);
     //return;
     }

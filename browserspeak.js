@@ -1,17 +1,3 @@
-/* 
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-// A bookmarklet to send a speaktext command to the BrowserSpeak application.
-
-// Return from bookmarklet, ensuring no result is displayed.
-
-// A bookmarklet to send a speaktext command to the BrowserSpeak application.
-var server = "localhost:60024";
-// Change the port number for your app to something unique.
-
-var maxreqlength = 1500;
-// This is a conservative limit that should work with all browsers.
 var selectedText="";
 var debug=1;
 function stopspeaking()
@@ -37,9 +23,15 @@ stopspeaking();
 return;
 }
 var utterance = new SpeechSynthesisUtterance(text.split("<speedofvoice1389867680568>")[0]);
+var rate=parseInt(text.split("<speedofvoice1389867680568>")[1]);
+
+if(!isNaN(rate)){
+utterance.rate=rate;
+}
+
 var voices = window.speechSynthesis.getVoices();
 
-if( !window.navigator.onLine) //offline implementation is buggy :(
+if(true)//!window.navigator.onLine) //offline implementation is buggy :(, update:seems to be fixed now
 {
 	utterance.voice=voices.filter(function(v){return v.localService==true})[0]
 

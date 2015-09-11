@@ -13,7 +13,7 @@ if (!localStorage['ran_before']) {
 }
 
 if(!localStorage.blist)
-	localStorage.blist=[1];
+	localStorage.blist=JSON.stringify(new Array());
 
 
 chrome.tabs.onUpdated.addListener(function callback(tabid,info,tab)
@@ -23,10 +23,11 @@ if(info.status=="loading")
     return;
 	console.log([info,tab]);
 	var url=tab.url.toString().split('?')[0];
-	if(localStorage.blist.indexOf(url)==-1) //if not in blist then execute screenreader code
+        var list=JSON.parse(localStorage.blist);
+	if(list.indexOf(url)==-1) //if not in blist then execute screenreader code
 	{
-		chrome.tabs.executeScript(tab.tabId, {file:"browserspeak.js"}, function(){
-			chrome.tabs.executeScript(tab.tabId, {file:"screenreader.js"}, null);
+	chrome.tabs.executeScript(tab.tabId, {file:"browserspeak.js"}, function(){
+		    chrome.tabs.executeScript(tab.tabId, {file:"screenreader.js"}, function(){ console.log("Inserted both browserspeak.js and screenreader.js into "+url)});
 			});
 	}
 });
@@ -36,7 +37,7 @@ chrome.browserAction.onClicked.addListener(function (tab){
 var url=tab.url.split('?')[0];
 
 var list=JSON.parse(localStorage.blist);
-
+console.log(list);
 var index=list.indexOf(url);
 console.log(url+" "+index);
 if(index==-1) //not in blacklist
