@@ -70,7 +70,7 @@ var adr=window.location.href.toString();
 /**
  *the speech rate. varies from -10 to 10. press + key to increase and - to decrease
  */
-var sr=2;
+var sr=1;
 //ads("http://localhost:8080/WebApplication2/browserspeak.js?timestamp="+new Date().getTime());
 function speak(text)
 {
@@ -327,7 +327,7 @@ function handler(event)
     }
     if(false && kc==sd)
     {
-        sr= sr>0?sr-1:0;
+        sr= sr>-10?sr-1:-10;
         console.debug("speech rate is "+sr);
     //return;
     }

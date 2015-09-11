@@ -1,2 +1,0 @@
--beta feature for adding space if height difference in selection added
--selection color changed
