@@ -1,5 +1,6 @@
 screenreader_deploy_ready_standalone
 ====================================
+EDIT: Note code quality is not that good as I made it in college times and didn't work on it much. Didn't do any work on improving the code quality.
 
 a simple chrome extension(fully independent) to read aloud websites with a no(extra added) user interface
 
